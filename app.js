@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot')
 
 const MetaProvider = require('@bot-whatsapp/provider/meta')
@@ -45,9 +47,9 @@ const main = async () => {
     const adapterFlow = createFlow([flowSecundario])
 
     const adapterProvider = createProvider(MetaProvider, {
-        jwtToken: 'jwtToken',
-        numberId: 'numberId',
-        verifyToken: 'verifyToken',
+        jwtToken: process.env.JWTOKEN,
+        numberId: process.env.NUMBER_ID,
+        verifyToken: process.env.VERIFY_TOKEN,
     })
 
     createBot({
