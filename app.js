@@ -47,9 +47,9 @@ const main = async () => {
     const adapterFlow = createFlow([flowSecundario])
 
     const adapterProvider = createProvider(MetaProvider, {
-        jwtToken: process.env.JWTOKEN,
-        numberId: process.env.NUMBER_ID,
-        verifyToken: process.env.VERIFY_TOKEN,
+        jwtToken: EAAC1uaU7d4YBABw1Y9PLj5EyANRbt5ukacjNcjVW1c4ZBbb9vN4ZCpEDfCFdBWZCkQioWdXxGbRIs12X8pZAoIZCJIQlsBXcAi2vkCSmzZBmbrToxRXyuCQdOqdiVebFbCbmbODfTm5IzJQtUC1UlXiZB8p5aeUEzUPsymo2e9tBBzZCl6eQNCEKyZC0qkxFjx1SbFIMVZCycQYAZDZD,
+        numberId: 110570088696939,
+        verifyToken: 'WspBusiness',
     })
 
     createBot({
