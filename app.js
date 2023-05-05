@@ -1,4 +1,5 @@
-const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot')
+require('dotenv').config();
+const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot');
 
 const MetaProvider = require('@bot-whatsapp/provider/meta')
 const MockAdapter = require('@bot-whatsapp/database/mock')
@@ -43,11 +44,13 @@ const flowTuto = addKeyword(['tutorial', 'tuto']).addAnswer(
 const main = async () => {
     const adapterDB = new MockAdapter()
     const adapterFlow = createFlow([flowSecundario])
-
+    console.log(process.env.JWTOKEN)
+    console.log(process.env.NUMBER_ID)
+    console.log(process.env.VERIFY_TOKEN)
     const adapterProvider = createProvider(MetaProvider, {
-        jwtToken: process.env.JWTOKEN,
-        numberId: process.env.NUMBER_ID,
-        verifyToken: process.env.VERIFY_TOKEN,
+        jwtToken:process.env.JWTOKEN,
+        numberId:process.env.NUMBER_ID,
+        verifyToken:process.env.VERIFY_TOKEN,
     })
 
     createBot({
